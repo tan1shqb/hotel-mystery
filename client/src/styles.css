@@ -1,0 +1,78 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0d14;
+  --fg: #e8e6f0;
+  --muted: #8a87a0;
+  --accent: #e0b04a;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(ellipse at 50% 30%, #1a1d2e 0%, var(--bg) 70%);
+  color: var(--fg);
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.splash {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+}
+
+.logo {
+  font-size: 5rem;
+  filter: drop-shadow(0 0 24px rgba(224, 176, 74, 0.35));
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.conn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 2rem;
+  min-height: 2.5rem;
+}
+
+.conn-rtt {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.conn-connecting .conn-icon {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
